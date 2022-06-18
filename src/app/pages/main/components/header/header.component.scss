@@ -1,0 +1,58 @@
+.header-wrapper {
+  position: fixed;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: 48px;
+
+  background-color: #333333;
+  border-bottom: 1px solid #edeef0;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+    max-width: 1270px;
+
+    padding: 0 8px;
+
+    &__item {
+      height: 48px;
+
+      padding: 0 8px;
+
+      color: #ffffff;
+      line-height: 48px;
+
+      &__sign-out {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: inherit;
+
+        cursor: pointer;
+
+        & svg {
+          width: 24px;
+          height: 24px;
+
+          fill: #ffffff;
+
+          transition: fill ease 0.3s;
+        }
+
+        &:hover {
+          & svg {
+            fill: #85a5f8;
+          }
+        }
+      }
+    }
+  }
+}

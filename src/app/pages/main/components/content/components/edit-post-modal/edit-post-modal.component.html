@@ -1,0 +1,39 @@
+<app-modal id="edit-post" (closeModal)="onCloseModal()">
+  <div class="form edit-post-modal">
+    <div class="form__title">Edit Post</div>
+    <form class="form__form" [formGroup]="form">
+      <div class="form__form-group">
+        <div class="form__form-item">
+          <label class="form__form-item__label" for="title">Title</label>
+          <input class="form__form-item__input" type="text" id="title" formControlName="title" />
+        </div>
+        <div class="form__form-item">
+          <label class="form__form-item__label" for="body">Body</label>
+          <input class="form__form-item__input" type="text" id="body" formControlName="body" />
+        </div>
+      </div>
+      <div class="form__form-group">
+        <div class="form__form-item">
+          <app-button
+            fill="blue"
+            [loading]="(updateStatus | async) === 'loading'"
+            [disabled]="(deleteStatus | async) === 'loading'"
+            (clickButton)="editPost()"
+          >
+            Edit
+          </app-button>
+        </div>
+        <div class="form__form-item">
+          <app-button
+            fill="red"
+            [loading]="(deleteStatus | async) === 'loading'"
+            [disabled]="(updateStatus | async) === 'loading'"
+            (clickButton)="deletePost()"
+          >
+            Delete
+          </app-button>
+        </div>
+      </div>
+    </form>
+  </div>
+</app-modal>

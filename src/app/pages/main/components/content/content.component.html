@@ -1,0 +1,27 @@
+<div class="content-wrapper">
+  <div class="content">
+    <div class="content__top-bar">
+      <div class="content__top-bar__title">Posts ({{ (posts | async)!.length }})</div>
+      <div class="content__top-bar__create-post" (click)="openCreatePostModal()">
+        <svg viewBox="0 0 24 24">
+          <path d="M11 11v-11h1v11h11v1h-11v11h-1v-11h-11v-1h11z" />
+        </svg>
+      </div>
+    </div>
+    <div class="content__posts">
+      <app-post class="content__posts__post" *ngFor="let post of posts | async" [post]="post"></app-post>
+      <div
+        *ngIf="(posts | async)!.length !== 0"
+        class="content__posts__extra"
+        appIntersectionObserver
+        (visibilityChange)="visibilityChangeExtra($event)"
+      ></div>
+    </div>
+    <div class="content__empty" *ngIf="(posts | async)!.length === 0 && (findStatus | async) !== 'loading'">Empty</div>
+    <div class="spinner" *ngIf="(findStatus | async) === 'loading'">
+      <app-spinner></app-spinner>
+    </div>
+  </div>
+</div>
+<app-edit-post-modal></app-edit-post-modal>
+<app-create-post-modal></app-create-post-modal>

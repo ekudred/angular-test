@@ -1,0 +1,22 @@
+<app-modal id="create-post" (closeModal)="onCloseModal()">
+  <div class="form create-post-modal">
+    <div class="form__title">Create Post</div>
+    <form class="form__form" [formGroup]="form">
+      <div class="form__form-group">
+        <div class="form__form-item">
+          <label class="form__form-item__label" for="title">Title</label>
+          <input class="form__form-item__input" type="text" id="title" formControlName="title" />
+        </div>
+        <div class="form__form-item">
+          <label class="form__form-item__label" for="body">Body</label>
+          <input class="form__form-item__input" type="text" id="body" formControlName="body" />
+        </div>
+      </div>
+      <div class="form__form-group">
+        <div class="form__form-item">
+          <app-button [loading]="(createStatus | async) === 'loading'" (clickButton)="createPost()">Create</app-button>
+        </div>
+      </div>
+    </form>
+  </div>
+</app-modal>

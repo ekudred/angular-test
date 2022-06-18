@@ -1,0 +1,10 @@
+<button
+  [ngClass]="{ button: true, disabled: disabled || loading, blue: fill === 'blue', red: fill === 'red' }"
+  [tabindex]="disabled || loading ? -1 : 0"
+  (click)="clickButton.emit()"
+>
+  <app-spinner fill="white" *ngIf="loading; else content"></app-spinner>
+  <ng-template #content>
+    <ng-content></ng-content>
+  </ng-template>
+</button>

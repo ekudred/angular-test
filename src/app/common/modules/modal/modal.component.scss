@@ -1,0 +1,22 @@
+.app-modal-wrapper {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: auto;
+
+  background-color: rgba(#000000, 0.5);
+
+  .app-modal {
+  }
+}

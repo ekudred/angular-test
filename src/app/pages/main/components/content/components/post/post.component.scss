@@ -1,0 +1,60 @@
+.post {
+  padding: 8px;
+
+  border: 1px solid #edeef0;
+  border-radius: 2px;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__head__extra {
+    display: flex;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 20px;
+
+    padding: 0 0 8px 0;
+  }
+
+  &__settings {
+    width: 14px;
+    height: 14px;
+
+    margin: 0 8px 0 0;
+
+    cursor: pointer;
+
+    & svg {
+      width: 14px;
+      height: 14px;
+
+      fill: #b6b4b4;
+
+      transition: fill ease 0.3s;
+    }
+
+    &:hover {
+      & svg {
+        fill: #85a5f8;
+      }
+    }
+  }
+
+  &__createdAt {
+    text-align: right;
+
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #b6b4b4;
+  }
+
+  &__body {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}

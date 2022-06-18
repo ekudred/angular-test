@@ -1,0 +1,26 @@
+<div class="auth-wrapper">
+  <div class="form auth">
+    <div class="form__title">
+      <svg>
+        <path d="M8 10v-5l8 7-8 7v-5h-8v-4h8zm2-8v2h12v16h-12v2h14v-20h-14z" />
+      </svg>
+    </div>
+    <form class="form__form" [formGroup]="form" (ngSubmit)="signIn()">
+      <div class="form__form-group">
+        <div class="form__form-item">
+          <label class="form__form-item__label" for="username">Username</label>
+          <input class="form__form-item__input" type="text" id="username" formControlName="username" />
+        </div>
+        <div class="form__form-item">
+          <label class="form__form-item__label" for="password">Password</label>
+          <input class="form__form-item__input" type="text" id="password" formControlName="password" />
+        </div>
+      </div>
+      <div class="form__form-group">
+        <div class="form__form-item">
+          <app-button (clickButton)="signIn()">Sign in</app-button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
