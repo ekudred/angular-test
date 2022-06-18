@@ -1,3 +1,5 @@
-# AngularTest
+# Angular Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
+## Проект для обучения Angular
+
+### Для проверки полной работы проекта нужен Angular Test Server
